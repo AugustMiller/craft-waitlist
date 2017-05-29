@@ -1,4 +1,4 @@
-# Craft Commerce Waitlist
+# Craft Waitlist
 
 > **Please Note**
 > This plugin is under active development. Some primary advertised features are not yet implemented.
@@ -16,7 +16,7 @@ The form can be as simple as this, assuming it's submitted via AJAX:
 ```twig
 <form method="POST" class="waitlist">
   <input type="hidden" name="action" value="waitlist/members/add">
-  <input type="hidden" name="productId" value="{{ product.id }}">
+  <input type="hidden" name="subjectId" value="{{ product.id }}">
   {{ getCsrfInput() }}
 
   <input type="text" name="email">
