@@ -1,0 +1,13 @@
+<div class="btn menubtn" role="button">{{ "Set status…" | t }}</div>
+<div class="menu">
+  <ul>
+    {% for key, status in statuses %}
+      <li>
+        <a class="formsubmit" data-param="status" data-value="{{ key }}">
+          <span class="status {{ key }}"></span>
+          {{ status }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

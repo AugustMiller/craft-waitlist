@@ -1,0 +1,13 @@
+.status.waitlist-active {
+  background-color: #52a3ca;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.status.waitlist-canceled {
+  background-color: #ffd766;
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.status.waitlist-fulfilled {
+  background-color: #80c378;
+}
