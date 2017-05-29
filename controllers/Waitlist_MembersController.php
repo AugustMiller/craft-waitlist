@@ -11,15 +11,15 @@ class Waitlist_MembersController extends BaseController
     $member = new Waitlist_MemberModel;
 
     $email = craft()->request->getPost('email', null);
-    $product = craft()->commerce_products->getProductById(craft()->request->getPost('productId'));
+    $subject = craft()->elements->getElementById(craft()->request->getPost('subjectId'));
 
-    if (!$product)
+    if (!$subject)
     {
-      $this->returnErrorJson(Craft::t('The product does not exist.'));
+      $this->returnErrorJson(Craft::t('The element does not exist.'));
     }
 
     $member->email = $email;
-    $member->productId = $product->id;
+    $member->subjectId = $subject->id;
 
     if (craft()->waitlist_members->saveMember($member))
     {

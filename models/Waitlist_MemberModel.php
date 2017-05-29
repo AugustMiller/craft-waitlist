@@ -1,14 +1,5 @@
 <?php namespace Craft;
 
-/**
- * Class Waitlist_MemberModel
- *
- * @property int $ownerId
- * @property enum $status
- * @property string $email
- *
- * @package Craft
- */
 class Waitlist_MemberModel extends BaseElementModel
 {
   protected $elementType = 'Waitlist_Member';
@@ -38,7 +29,7 @@ class Waitlist_MemberModel extends BaseElementModel
         'default' => Waitlist_MemberStatus::ACTIVE,
         'required' => true
       ],
-      'productId' => [
+      'subjectId' => [
         'type' => AttributeType::Number,
         'required' => true
       ],
@@ -49,8 +40,8 @@ class Waitlist_MemberModel extends BaseElementModel
     ]);
   }
 
-  public function getProduct()
+  public function getSubjectElement()
   {
-    return craft()->commerce_products->getProductById($this->productId);
+    return craft()->elements->getElementById($this->subjectId);
   }
 }

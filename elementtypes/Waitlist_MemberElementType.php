@@ -67,7 +67,7 @@ class Waitlist_MemberElementType extends BaseElementType
   {
     return [
       'email' => AttributeType::String,
-      'productId' => AttributeType::Mixed,
+      'subjectId' => AttributeType::Mixed,
       'status' => AttributeType::String
     ];
   }
@@ -76,7 +76,7 @@ class Waitlist_MemberElementType extends BaseElementType
   {
     return [
       'email' => Craft::t('Email'),
-      'product' => Craft::t('Product'),
+      'subject' => Craft::t('Subject'),
       'dateCreated' => Craft::t('Date Created')
     ];
   }
@@ -107,9 +107,9 @@ class Waitlist_MemberElementType extends BaseElementType
       case 'email':
         return $element->email;
         break;
-      case 'product':
+      case 'subject':
         return craft()->templates->render('_elements/element', [
-          'element' => $element->getProduct()
+          'element' => $element->getSubjectElement()
         ]);
       default:
         return parent::getTableAttributeHtml($element, $attribute);

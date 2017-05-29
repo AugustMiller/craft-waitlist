@@ -46,7 +46,7 @@ class Waitlist_MemberRecord extends BaseRecord
         'required' => true,
         'onDelete' => static::CASCADE
       ],
-      'product' => [
+      'subject' => [
         static::BELONGS_TO,
         'ElementRecord',
         'required' => true,

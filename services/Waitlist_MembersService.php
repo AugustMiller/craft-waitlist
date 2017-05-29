@@ -29,7 +29,7 @@ class Waitlist_MembersService extends BaseApplicationComponent
     }
 
     $record->email = $member->email;
-    $record->productId = $member->productId;
+    $record->subjectId = $member->subjectId;
 
     $record->validate();
     $member->addErrors($record->getErrors());
