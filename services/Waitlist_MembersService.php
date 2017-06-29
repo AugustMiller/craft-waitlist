@@ -4,7 +4,10 @@ class Waitlist_MembersService extends BaseApplicationComponent
 {
   public function getAllMembers()
   {
-    return craft()->elements->getCriteria('Waitlist_Member');
+    $criteria = craft()->elements->getCriteria('Waitlist_Member');
+    $criteria->setAttribute('limit', 0);
+
+    return $criteria;
   }
 
   public function saveMember(Waitlist_MemberModel $member)
@@ -93,5 +96,10 @@ class Waitlist_MembersService extends BaseApplicationComponent
     {
       return $this->getAllStatuses()[$status];
     }
+  }
+
+  public function getTotalMembers($status = null)
+  {
+    return $this->getAllMembers()->count();
   }
 }

@@ -41,7 +41,7 @@ class Waitlist_MemberElementType extends BaseElementType
 
     return [
       '*' => [
-        'label' => Craft::t('All members'),
+        'label' => Craft::t('All members ({total})', ['total' => craft()->waitlist_members->getTotalMembers()]),
         'defaultSort' => ['dateCreated', 'desc']
       ]
     ];
